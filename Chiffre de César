@@ -1,0 +1,17 @@
+def cesar(message, decalage):
+    resultat = ""
+
+    for caractere in message:
+        if caractere.isalpha():
+            base = ord('A') if caractere.isupper() else ord('a')
+            resultat += chr((ord(caractere) - base + decalage) % 26 + base)
+        else:
+            resultat += caractere
+
+    return resultat
+
+texte = "bonjour"
+chiffre = cesar(texte, 3)
+
+print("Texte original :", texte)
+print("Texte chiffré :", chiffre)
